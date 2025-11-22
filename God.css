@@ -1,0 +1,166 @@
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(circle, #ede9fe 0%, #a855f7 40%, #4c1d95 100%);
+  color: #f9fafb;
+}
+
+#game-root {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 24px;
+  background: rgba(15, 23, 42, 0.92);
+  border-radius: 16px;
+  box-shadow: 0 22px 45px rgba(15, 23, 42, 0.9);
+}
+
+.game-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.badge-free {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.badge-premium {
+  background: #fbbf24;
+  color: #78350f;
+}
+
+.badge-god {
+  background: #a855f7;
+  color: #f9fafb;
+}
+
+.compact {
+  font-size: 13px;
+  color: #e5e7eb;
+}
+
+.section-title {
+  margin: 16px 0 6px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #e5e7eb;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.stat-card {
+  padding: 12px;
+  border-radius: 12px;
+  background: rgba(30, 64, 175, 0.5);
+}
+
+.stat-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+
+.stat-value {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+button {
+  border: none;
+  border-radius: 999px;
+  padding: 9px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.05s ease, box-shadow 0.1s ease, opacity 0.15s ease;
+}
+
+button.primary {
+  background: #4c1d95;
+  color: #f9fafb;
+  box-shadow: 0 12px 24px rgba(55, 48, 163, 0.7);
+}
+
+button.secondary {
+  background: #374151;
+  color: #e5e7eb;
+}
+
+button.premium {
+  background: #a855f7;
+  color: #f9fafb;
+}
+
+button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+button:not(:disabled):active {
+  transform: translateY(1px);
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.8);
+}
+
+.input {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #4b5563;
+  background: #020617;
+  color: #e5e7eb;
+  margin: 6px 0 10px;
+}
+
+.stripe-box {
+  padding: 12px;
+  border-radius: 12px;
+  background: rgba(30, 64, 175, 0.5);
+  margin-bottom: 16px;
+}
+
+.log {
+  max-height: 200px;
+  overflow-y: auto;
+  border-radius: 12px;
+  background: #020617;
+  color: #e5e7eb;
+  padding: 10px;
+  font-size: 13px;
+}
+
+.log-entry {
+  margin-bottom: 4px;
+}
+
+.companion {
+  margin-top: 8px;
+  padding: 10px;
+  border-radius: 12px;
+  background: rgba(251, 191, 36, 0.15);
+  font-size: 14px;
+}
