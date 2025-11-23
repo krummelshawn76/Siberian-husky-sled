@@ -12,41 +12,110 @@
   // EDITIONS CONFIG
   // ------------------------
   const EDITIONS = {
-    FRESH_BAIT: {
-      label: "FRESH BAIT",
-      badgeClass: "badge-free",
-      description: "Free starter edition with core Spartan missions.",
-      maxLevel: 10,
-      features: {
-        autoRun: false,
-        premiumShop: false,
-        triggerCompanion: false
-      }
-    },
-    HUNTER: {
-      label: "HUNTER",
-      badgeClass: "badge-premium",
-      description: "Enhanced edition with auto-run and Stripe-based gem bundles.",
-      maxLevel: 30,
-      features: {
-        autoRun: true,
-        premiumShop: true,
-        triggerCompanion: false
-      }
-    },
-    GOD_SAGA: {
-      label: "GOD",
-      badgeClass: "badge-god",
-      description: "Full saga edition with auto-run, max progression, and Trigger companion.",
-      maxLevel: 99,
-      features: {
-        autoRun: true,
-        premiumShop: true,
-        triggerCompanion: true
-      }
+  FRESH: {
+    name: "Fresh Bait Edition",
+    maxLevel: 10,
+    baseGemsPerRun: 1,
+    xpPerRun: 10,
+    color: "#009f5a",
+    // free edition: no paid packs (only in-game earned gems)
+    store: {
+      gemPacks: []
     }
-  };
+  },
 
+  HUNTER: {
+    name: "Hunter Edition",
+    maxLevel: 30,
+    baseGemsPerRun: 2,
+    xpPerRun: 15,
+    color: "#e58a00",
+    // Hunter uses low–mid gem packs
+    store: {
+      gemPacks: [
+        { priceLabel: "$2",  gems: 10 },
+        { priceLabel: "$5",  gems: 25 },
+        { priceLabel: "$10", gems: 50 },
+        { priceLabel: "$20", gems: 75 },
+        { priceLabel: "$30", gems: 100 },
+        { priceLabel: "$40", gems: 300 }
+      ],
+      // these are logical “uses” for gems in Hunter
+      upgrades: [
+        {
+          id: "hunter_xp_boost",
+          name: "XP Booster (+50% XP)",
+          costGems: 25,
+          apply: (state) => { state.hunterXpBoost = 1.5; }
+        },
+        {
+          id: "hunter_gem_boost",
+          name: "Gem Booster (+1 gem per run)",
+          costGems: 40,
+          apply: (state) => { state.hunterGemBonus = (state.hunterGemBonus || 0) + 1; }
+        },
+        {
+          id: "hunter_autorun",
+          name: "Unlock Auto-Run",
+          costGems: 50,
+          apply: (state) => { state.hunterAutoUnlocked = true; }
+        }
+      ]
+    }
+  },
+
+  GOD: {
+    name: "GOD Saga Edition",
+    maxLevel: 99,
+    baseGemsPerRun: 3,
+    xpPerRun: 20,
+    color: "#6d34d6",
+    // GOD can see all tiers including high-end packs
+    store: {
+      gemPacks: [
+        { priceLabel: "$2",  gems: 10 },
+        { priceLabel: "$5",  gems: 25 },
+        { priceLabel: "$10", gems: 50 },
+        { priceLabel: "$20", gems: 75 },
+        { priceLabel: "$30", gems: 100 },
+        { priceLabel: "$40", gems: 300 },
+        { priceLabel: "$50", gems: 500 },
+        { priceLabel: "$60", gems: 700 },
+        { priceLabel: "$70", gems: 900 },
+        { priceLabel: "$80", gems: 1100 },
+        { priceLabel: "$90", gems: 2000 },
+        { priceLabel: "$100", gems: 1000000 } // crazy “support the dev” pack
+      ],
+      upgrades: [
+        {
+          id: "god_xp_boost",
+          name: "GOD XP Multiplier (+100% XP)",
+          costGems: 100,
+          apply: (state) => { state.godXpBoost = 2; }
+        },
+        {
+          id: "god_gem_boost",
+          name: "GOD Gem Multiplier (+2 gems per run)",
+          costGems: 150,
+          apply: (state) => { state.godGemBonus = (state.godGemBonus || 0) + 2; }
+        },
+        {
+          id: "god_trigger_early",
+          name: "Early Trigger Unlock",
+          costGems: 300,
+          apply: (state) => { state.triggerUnlockedEarly = true; }
+        },
+        {
+          id: "god_auras",
+          name: "Divine Aura (cosmetic)",
+          costGems: 50,
+          apply: (state) => { state.godAuraOwned = true; }
+        }
+      ]
+    }
+  }
+};
+    
   // read which edition from HTML
   const editionKey = window.GAME_EDITION || "FRESH_BAIT";
   const EDITION = EDITIONS[editionKey];
@@ -54,7 +123,7 @@
   // ------------------------
   // STRIPE SETTINGS
   // ------------------------
-  // This is the Stripe Payment Link you provided.
+  // This is the Stripe Payment 
   // BACKEND / WEBHOOKS must handle actual gem deposits.
   const STRIPE_PAYMENT_LINK = "https://buy.stripe.com/fZu5kEcah7CS4V61NX1gs00";
 
