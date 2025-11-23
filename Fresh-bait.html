@@ -4,47 +4,71 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fresh Bait Edition – Siberian Husky Saga</title>
+
+  <!-- Main shared stylesheet -->
   <link rel="stylesheet" href="main.css" />
+
+  <!-- Prevent caching issues on GitHub Pages -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
 </head>
+
 <body class="page-bg">
   <div class="page-wrapper">
+    
+    <!-- Edition Header -->
     <header class="edition-header fresh">
       <h1>Fresh Bait Edition (Free)</h1>
-      <p>Play as Spartan, earn gems only through missions. No payments.</p>
-      <nav>
+      <p>
+        Play as Spartan – earn ALL gems through missions.
+        <br>No purchases are available in this edition.
+      </p>
+
+      <nav class="nav-links">
         <a href="index.html" class="link-nav">⬅ Back to Menu</a>
         <a href="store.html" class="link-nav">🛒 Store</a>
       </nav>
     </header>
 
+    <!-- Game Panel -->
     <main class="game-panel">
+
+      <!-- Stats -->
       <section class="stats-card">
         <h2>Spartan – Progress</h2>
-        <p>Level: <span id="level">1</span> / <span id="max-level">10</span></p>
+        <p>Level: <span id="level">1</span> / 10</p>
         <p>XP: <span id="xp">0</span> / <span id="xp-next">50</span></p>
         <p>Gems: <span id="gems">0</span></p>
       </section>
 
+      <!-- Mission Button -->
       <section class="actions-card">
         <button class="btn primary" onclick="runMission()">
           🐾 Run Mission
         </button>
         <p class="hint">
-          Complete missions to earn XP and gems. In this edition you
-          cannot buy gems – everything is earned in-game.
+          Complete missions to earn XP and gems.
+          <br><strong>No gem purchases exist in this edition.</strong>
         </p>
       </section>
 
+      <!-- Mission Log -->
       <section class="log-card">
         <h3>Mission Log</h3>
         <div id="log" class="log-output"></div>
       </section>
+
     </main>
   </div>
 
+  <!-- Edition Identifier -->
   <script>
     window.GAME_EDITION = "FRESH";
   </script>
+
+  <!-- Shared Game Engine -->
   <script src="game.js"></script>
+
 </body>
 </html>
