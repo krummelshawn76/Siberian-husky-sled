@@ -4,28 +4,36 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Siberian Husky Saga – Store</title>
+
   <link rel="stylesheet" href="main.css" />
+
+  <!-- Avoid stale caching on GitHub Pages -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
 </head>
+
 <body class="page-bg">
   <div class="page-wrapper">
+
     <header class="edition-header store">
       <h1>🛒 Siberian Husky Saga Store</h1>
-      <p>Support the game and buy gems through Stripe.</p>
-      <nav>
+      <p>Support the saga and buy gem packs via Stripe.</p>
+      <nav class="nav-links">
         <a href="index.html" class="link-nav">⬅ Back to Menu</a>
       </nav>
     </header>
 
     <main class="store-panel">
+
       <section class="store-card hunter-store">
         <h2>Hunter Edition Gems</h2>
-        <p>
-          Mid-tier gem bundles for the Hunter Edition.
-        </p>
+        <p>Mid-tier gem bundles for Hunter Edition.</p>
         <a
           class="btn primary"
           href="https://donate.stripe.com/9B6bJ2cah3mCgDO9gp1gs01"
-          target="_blank" rel="noopener noreferrer"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           💳 Open Hunter Gem Checkout
         </a>
@@ -33,13 +41,12 @@
 
       <section class="store-card god-store">
         <h2>GOD Saga Gems</h2>
-        <p>
-          High-tier gem bundles and support pack for GOD Saga Edition.
-        </p>
+        <p>High-tier gem bundles &amp; support packs for GOD Edition.</p>
         <a
           class="btn btn-god"
           href="https://buy.stripe.com/5kQfZia29cXccnyeAJ1gs02"
-          target="_blank" rel="noopener noreferrer"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           💳 Open GOD Gem Checkout
         </a>
@@ -47,13 +54,13 @@
 
       <section class="store-note">
         <p>
-          NOTE: This game runs on GitHub Pages (no backend). Stripe
-          purchases are handled securely by Stripe but cannot
-          automatically update your in-game gem balance. Use them as
-          donations / support and adjust gems manually via the honor
-          system if you want.
+          NOTE: This game runs on GitHub Pages with no backend server.
+          Stripe handles payments securely, but it cannot automatically
+          credit gems in the game. Use your purchases as support /
+          donations and adjust gems manually using the honor system.
         </p>
       </section>
+
     </main>
   </div>
 </body>
