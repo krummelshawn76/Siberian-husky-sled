@@ -1,74 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Siberian Husky Saga – Store</title>
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #e6f0ff;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-
-        h1 {
-            margin-top: 30px;
-            font-size: 36px;
-            font-weight: bold;
-            color: #1d3d8f;
-        }
-
-        h2 {
-            margin-top: 10px;
-            font-size: 22px;
-            color: #444;
-        }
-
-        .container {
-            margin-top: 40px;
-            padding: 20px;
-        }
-
-        .back-btn {
-            display: inline-block;
-            margin-top: 40px;
-            padding: 12px 22px;
-            background: #1d65a6;
-            color: white;
-            border-radius: 8px;
-            font-size: 18px;
-            text-decoration: none;
-            transition: 0.2s;
-        }
-
-        .back-btn:hover {
-            background: #154b7a;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Siberian Husky Saga – Store</title>
+  <link rel="stylesheet" href="main.css" />
 </head>
+<body class="page-bg">
+  <div class="page-wrapper">
+    <header class="edition-header store">
+      <h1>🛒 Siberian Husky Saga Store</h1>
+      <p>Support the game and buy gems through Stripe.</p>
+      <nav>
+        <a href="index.html" class="link-nav">⬅ Back to Menu</a>
+      </nav>
+    </header>
 
-<body>
+    <main class="store-panel">
+      <section class="store-card hunter-store">
+        <h2>Hunter Edition Gems</h2>
+        <p>
+          Mid-tier gem bundles for the Hunter Edition.
+        </p>
+        <a
+          class="btn primary"
+          href="https://donate.stripe.com/9B6bJ2cah3mCgDO9gp1gs01"
+          target="_blank" rel="noopener noreferrer"
+        >
+          💳 Open Hunter Gem Checkout
+        </a>
+      </section>
 
-    <h1>Siberian Husky Saga Store</h1>
-    <h2>Support the Game • Unlock Rewards</h2>
+      <section class="store-card god-store">
+        <h2>GOD Saga Gems</h2>
+        <p>
+          High-tier gem bundles and support pack for GOD Saga Edition.
+        </p>
+        <a
+          class="btn btn-god"
+          href="https://buy.stripe.com/5kQfZia29cXccnyeAJ1gs02"
+          target="_blank" rel="noopener noreferrer"
+        >
+          💳 Open GOD Gem Checkout
+        </a>
+      </section>
 
-    <div class="container">
-
-        <!-- Stripe Script -->
-        <script async src="https://js.stripe.com/v3/buy-button.js"></script>
-
-        <!-- Stripe Buy Button -->
-        <stripe-buy-button
-            buy-button-id="buy_btn_1SVzUsKGcvV5pbjB8SfTqneO"
-            publishable-key="pk_live_51QVONeKGcvV5pbjBuuuFwkxkgGuDkow8bdPidTpfGxNxwQyI9QguXgoa1GTaiCd9fCrDxl6rBMVORvA0icGlhpCo00dZPel6KB">
-        </stripe-buy-button>
-
-    </div>
-
-    <a class="back-btn" href="index.html">⬅ Back to Main Menu</a>
-
+      <section class="store-note">
+        <p>
+          NOTE: This game runs on GitHub Pages (no backend). Stripe
+          purchases are handled securely by Stripe but cannot
+          automatically update your in-game gem balance. Use them as
+          donations / support and adjust gems manually via the honor
+          system if you want.
+        </p>
+      </section>
+    </main>
+  </div>
 </body>
 </html>
