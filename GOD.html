@@ -4,58 +4,87 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GOD Saga Edition – Siberian Husky Saga</title>
+
+  <!-- Shared styling -->
   <link rel="stylesheet" href="main.css" />
+
+  <!-- Avoid stale caching on GitHub Pages -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
 </head>
+
 <body class="page-bg">
   <div class="page-wrapper">
+
+    <!-- Edition Header -->
     <header class="edition-header god">
       <h1>GOD Saga Edition (Ultimate)</h1>
-      <p>Highest progression, Trigger unlock and massive gem boosts.</p>
-      <nav>
+      <p>
+        Full saga progression, Spartan &amp; Trigger, big gem gains and
+        high-tier support packs.
+      </p>
+      <nav class="nav-links">
         <a href="index.html" class="link-nav">⬅ Back to Menu</a>
         <a href="store.html" class="link-nav">🛒 Store</a>
       </nav>
     </header>
 
+    <!-- Game Panel -->
     <main class="game-panel">
+
+      <!-- Stats -->
       <section class="stats-card">
         <h2>Spartan &amp; Trigger – GOD Progress</h2>
-        <p>Level: <span id="level">1</span> / <span id="max-level">99</span></p>
+        <p>Level: <span id="level">1</span> / 99</p>
         <p>XP: <span id="xp">0</span> / <span id="xp-next">50</span></p>
         <p>Gems: <span id="gems">0</span></p>
         <p id="trigger-status">Trigger: locked</p>
       </section>
 
+      <!-- Actions -->
       <section class="actions-card">
         <button class="btn primary" onclick="runMission()">
           🐾 Run Mission
         </button>
 
-        <button class="btn secondary" onclick="buyOfflineNotice('GOD')">
+        <!-- Direct GOD Stripe link -->
+        <a
+          class="btn secondary"
+          href="https://buy.stripe.com/5kQfZia29cXccnyeAJ1gs02"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           💎 Buy GOD Gems (Stripe)
-        </button>
+        </a>
 
         <button class="btn tertiary" onclick="tryUnlockTrigger()">
           🐕 Unlock Trigger with Gems (300)
         </button>
 
         <p class="hint">
-          GOD Edition supports very high gem packs. Stripe purchases
-          can’t automatically credit gems on a static site; use the
-          honor system and adjust gems manually if needed.
+          GOD Edition supports very large gem bundles. Stripe purchases
+          are processed by Stripe and cannot auto-update gems in-game
+          on a static site – you can treat them as support and adjust
+          your gems manually using the honor system.
         </p>
       </section>
 
+      <!-- Log -->
       <section class="log-card">
         <h3>Mission Log</h3>
         <div id="log" class="log-output"></div>
       </section>
+
     </main>
   </div>
 
+  <!-- Edition identifier for game.js -->
   <script>
     window.GAME_EDITION = "GOD";
   </script>
+
+  <!-- Shared game engine -->
   <script src="game.js"></script>
 </body>
 </html>
