@@ -1,0 +1,9 @@
+{
+  "name": "Siberian Husky Saga",
+  "short_name": "Husky Saga",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#2b4f93",
+  "theme_color": "#2b4f93",
+  "icons": []
+}
