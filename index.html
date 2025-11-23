@@ -1,80 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-   <title>Siberian Husky Saga – Choose Your Edition</title>
-  <style>
-    body {
-      <body>
-   <h1>🐺 Siberian Husky Saga</h1>
-      <img src="A_logo_titled_SIBERIAN_HUSKY_SAGA_features_a_Sib.png"
-     alt="Siberian Husky Saga Logo"
-     style="max-width:260px; margin-bottom:20px; border-radius:12px;">
-      font-family: system-ui, sans-serif;
-      background: radial-gradient(circle, #dbeafe, #93c5fd, #1e3a8a);
-      color: #fff;
-      text-align: center;
-      padding: 40px 20px;
-    }
-    h1 {
-      font-size: 38px;
-      margin-bottom: 10px;
-    }
-    p {
-      font-size: 16px;
-      opacity: 0.9;
-      margin-bottom: 30px;
-    }
-    .btn-container {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      max-width: 400px;
-      margin: 0 auto;
-    }
-    a {
-      display: block;
-      padding: 14px 20px;
-      border-radius: 12px;
-      text-decoration: none;
-      color: #fff;
-      font-weight: 600;
-      font-size: 18px;
-      transition: transform .1s ease, opacity .2s ease;
-    }
-    a:active {
-      transform: scale(.97);
-    }
-    .fresh {
-      background: #22c55e;
-    }
-    .hunter {
-      background: #f59e0b;
-    }
-    .god {
-      background: #8b5cf6;
-    }
-    footer {
-      margin-top: 40px;
-      opacity: .7;
-      font-size: 13px;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Siberian Husky Saga</title>
+  <link rel="stylesheet" href="main.css" />
+  <link rel="manifest" href="manifest.json" />
 </head>
-<body>
+<body class="page-bg">
 
-  <h1>🐺 Siberian Husky Saga</h1>
-  <p>Select your game edition to begin your journey as <strong>Spartan</strong>.</p>
+  <div class="page-wrapper">
+    <header class="hero-header">
+      <img
+        src="Image/file_000000004eac71f58e0f324b6b863bc7.png"
+        alt="Siberian Husky Saga – Trigger and Spartan"
+        class="hero-poster"
+      />
+    </header>
 
-  <div class=<div class="promo-container">
-    <img 
-        src="/mnt/data/file_000000004eac71f58e0f324b6b863bc7.png" 
-        alt="Siberian Husky Saga Promotional Image"
-        class="promo-image"
-    >
+    <main class="menu-panel">
+      <h1 class="game-title">Siberian Husky Saga</h1>
+      <p class="subtitle">Choose your edition to begin as Spartan.</p>
+
+      <div class="menu-buttons">
+        <a class="btn btn-fresh" href="fresh-bait.html">
+          🎁 Fresh Bait Edition (Free)
+        </a>
+        <a class="btn btn-hunter" href="hunter.html">
+          🎯 Hunter Edition (Enhanced)
+        </a>
+        <a class="btn btn-god" href="god.html">
+          👑 GOD Saga Edition (Ultimate)
+        </a>
+      </div>
+    </main>
+
+    <a class="floating-shop-btn" href="store.html">
+      🛒 Store
+    </a>
   </div>
 
-  <footer>© 2025 Siberian Husky Saga • Powered by GitHub Pages</footer>
-
+  <script>
+    // PWA registration
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("service-worker.js")
+        .catch(err => console.warn("SW registration failed", err));
+    }
+  </script>
 </body>
 </html>
