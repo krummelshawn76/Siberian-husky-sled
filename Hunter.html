@@ -1,15 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Siberian Husky Saga – HUNTER</title>
-  <link rel="stylesheet" href="hunter.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hunter Edition – Siberian Husky Saga</title>
+  <link rel="stylesheet" href="main.css" />
+</head>
+<body class="page-bg">
+  <div class="page-wrapper">
+    <header class="edition-header hunter">
+      <h1>Hunter Edition (Enhanced)</h1>
+      <p>Auto-run ready edition with faster gem and XP gains.</p>
+      <nav>
+        <a href="index.html" class="link-nav">⬅ Back to Menu</a>
+        <a href="store.html" class="link-nav">🛒 Store</a>
+      </nav>
+    </header>
+
+    <main class="game-panel">
+      <section class="stats-card">
+        <h2>Spartan – Hunter Progress</h2>
+        <p>Level: <span id="level">1</span> / <span id="max-level">30</span></p>
+        <p>XP: <span id="xp">0</span> / <span id="xp-next">50</span></p>
+        <p>Gems: <span id="gems">0</span></p>
+      </section>
+
+      <section class="actions-card">
+        <button class="btn primary" onclick="runMission()">
+          🐾 Run Mission
+        </button>
+
+        <button class="btn secondary" onclick="buyOfflineNotice('Hunter')">
+          💎 Buy Hunter Gems (Stripe)
+        </button>
+
+        <p class="hint">
+          Buying gems uses Stripe’s secure checkout. Because this game
+          runs only in your browser (GitHub Pages), purchases cannot
+          auto-credit gems – treat them as support / honor-system boosts.
+        </p>
+      </section>
+
+      <section class="log-card">
+        <h3>Mission Log</h3>
+        <div id="log" class="log-output"></div>
+      </section>
+    </main>
+  </div>
+
   <script>
     window.GAME_EDITION = "HUNTER";
   </script>
-</head>
-<body>
-  <div id="game-root"></div>
   <script src="game.js"></script>
 </body>
 </html>
