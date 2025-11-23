@@ -1,15 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Siberian Husky Saga – GOD</title>
-  <link rel="stylesheet" href="god.css">
-  <script>
-    window.GAME_EDITION = "GOD_SAGA";
-  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GOD Saga Edition – Siberian Husky Saga</title>
+  <link rel="stylesheet" href="main.css" />
 </head>
-<body>
-  <div id="game-root"></div>
+<body class="page-bg">
+  <div class="page-wrapper">
+    <header class="edition-header god">
+      <h1>GOD Saga Edition (Ultimate)</h1>
+      <p>Highest progression, Trigger unlock and massive gem boosts.</p>
+      <nav>
+        <a href="index.html" class="link-nav">⬅ Back to Menu</a>
+        <a href="store.html" class="link-nav">🛒 Store</a>
+      </nav>
+    </header>
+
+    <main class="game-panel">
+      <section class="stats-card">
+        <h2>Spartan &amp; Trigger – GOD Progress</h2>
+        <p>Level: <span id="level">1</span> / <span id="max-level">99</span></p>
+        <p>XP: <span id="xp">0</span> / <span id="xp-next">50</span></p>
+        <p>Gems: <span id="gems">0</span></p>
+        <p id="trigger-status">Trigger: locked</p>
+      </section>
+
+      <section class="actions-card">
+        <button class="btn primary" onclick="runMission()">
+          🐾 Run Mission
+        </button>
+
+        <button class="btn secondary" onclick="buyOfflineNotice('GOD')">
+          💎 Buy GOD Gems (Stripe)
+        </button>
+
+        <button class="btn tertiary" onclick="tryUnlockTrigger()">
+          🐕 Unlock Trigger with Gems (300)
+        </button>
+
+        <p class="hint">
+          GOD Edition supports very high gem packs. Stripe purchases
+          can’t automatically credit gems on a static site; use the
+          honor system and adjust gems manually if needed.
+        </p>
+      </section>
+
+      <section class="log-card">
+        <h3>Mission Log</h3>
+        <div id="log" class="log-output"></div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    window.GAME_EDITION = "GOD";
+  </script>
   <script src="game.js"></script>
 </body>
 </html>
