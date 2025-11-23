@@ -1,15 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Siberian Husky Saga – FRESH BAIT</title>
-  <link rel="stylesheet" href="fresh-bait.css">
-  <script>
-    window.GAME_EDITION = "FRESH_BAIT";
-  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fresh Bait Edition – Siberian Husky Saga</title>
+  <link rel="stylesheet" href="main.css" />
 </head>
-<body>
-  <div id="game-root"></div>
+<body class="page-bg">
+  <div class="page-wrapper">
+    <header class="edition-header fresh">
+      <h1>Fresh Bait Edition (Free)</h1>
+      <p>Play as Spartan, earn gems only through missions. No payments.</p>
+      <nav>
+        <a href="index.html" class="link-nav">⬅ Back to Menu</a>
+        <a href="store.html" class="link-nav">🛒 Store</a>
+      </nav>
+    </header>
+
+    <main class="game-panel">
+      <section class="stats-card">
+        <h2>Spartan – Progress</h2>
+        <p>Level: <span id="level">1</span> / <span id="max-level">10</span></p>
+        <p>XP: <span id="xp">0</span> / <span id="xp-next">50</span></p>
+        <p>Gems: <span id="gems">0</span></p>
+      </section>
+
+      <section class="actions-card">
+        <button class="btn primary" onclick="runMission()">
+          🐾 Run Mission
+        </button>
+        <p class="hint">
+          Complete missions to earn XP and gems. In this edition you
+          cannot buy gems – everything is earned in-game.
+        </p>
+      </section>
+
+      <section class="log-card">
+        <h3>Mission Log</h3>
+        <div id="log" class="log-output"></div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    window.GAME_EDITION = "FRESH";
+  </script>
   <script src="game.js"></script>
 </body>
 </html>
