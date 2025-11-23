@@ -4,53 +4,82 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hunter Edition – Siberian Husky Saga</title>
+
+  <!-- Shared styling -->
   <link rel="stylesheet" href="main.css" />
+
+  <!-- Avoid stale caching on GitHub Pages -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
 </head>
+
 <body class="page-bg">
   <div class="page-wrapper">
+
+    <!-- Edition Header -->
     <header class="edition-header hunter">
       <h1>Hunter Edition (Enhanced)</h1>
-      <p>Auto-run ready edition with faster gem and XP gains.</p>
-      <nav>
+      <p>
+        Faster gem and XP gains for Spartan. Optional Stripe support
+        for Hunter gem bundles.
+      </p>
+      <nav class="nav-links">
         <a href="index.html" class="link-nav">⬅ Back to Menu</a>
         <a href="store.html" class="link-nav">🛒 Store</a>
       </nav>
     </header>
 
+    <!-- Game Panel -->
     <main class="game-panel">
+
+      <!-- Stats -->
       <section class="stats-card">
         <h2>Spartan – Hunter Progress</h2>
-        <p>Level: <span id="level">1</span> / <span id="max-level">30</span></p>
+        <p>Level: <span id="level">1</span> / 30</p>
         <p>XP: <span id="xp">0</span> / <span id="xp-next">50</span></p>
         <p>Gems: <span id="gems">0</span></p>
       </section>
 
+      <!-- Actions -->
       <section class="actions-card">
         <button class="btn primary" onclick="runMission()">
           🐾 Run Mission
         </button>
 
-        <button class="btn secondary" onclick="buyOfflineNotice('Hunter')">
+        <!-- Direct Hunter Stripe link -->
+        <a
+          class="btn secondary"
+          href="https://donate.stripe.com/9B6bJ2cah3mCgDO9gp1gs01"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           💎 Buy Hunter Gems (Stripe)
-        </button>
+        </a>
 
         <p class="hint">
-          Buying gems uses Stripe’s secure checkout. Because this game
-          runs only in your browser (GitHub Pages), purchases cannot
-          auto-credit gems – treat them as support / honor-system boosts.
+          Hunter Edition earns gems faster and can optionally use Stripe for
+          donations / gem packs. Because this game runs on GitHub Pages with
+          no backend, Stripe purchases don’t auto-credit gems – use the honor
+          system and adjust gems manually if you want.
         </p>
       </section>
 
+      <!-- Log -->
       <section class="log-card">
         <h3>Mission Log</h3>
         <div id="log" class="log-output"></div>
       </section>
+
     </main>
   </div>
 
+  <!-- Edition identifier for game.js -->
   <script>
     window.GAME_EDITION = "HUNTER";
   </script>
+
+  <!-- Shared game engine -->
   <script src="game.js"></script>
 </body>
 </html>
